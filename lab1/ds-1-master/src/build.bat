@@ -33,7 +33,6 @@ if defined version (
 		
 		echo taskkill /IM dotnet.exe /F > stop.bat
 	) else (
-		cd ..
 		echo This version already exists.
 	)
 ) else ( 
