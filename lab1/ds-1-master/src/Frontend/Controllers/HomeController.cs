@@ -27,8 +27,7 @@ namespace Frontend.Controllers
         {
             string url = "http://127.0.0.1:5000/api/values";
             HttpClient client = new HttpClient();
-            HttpContent content = new StringContent(data);
-            HttpResponseMessage response = await client.PostAsync(url, content);
+            HttpResponseMessage response = await client.PostAsJsonAsync(url, data);
             using(HttpContent responseContent = response.Content)
             {
                 return await responseContent.ReadAsStringAsync();

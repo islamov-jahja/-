@@ -22,16 +22,16 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "Backend/1.0.1": {
+      "Frontend/1.0.5": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0"
         },
         "runtime": {
-          "Backend.dll": {}
+          "Frontend.dll": {}
         },
         "compile": {
-          "Backend.dll": {}
+          "Frontend.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.2.0": {
@@ -3774,7 +3774,7 @@
     }
   },
   "libraries": {
-    "Backend/1.0.1": {
+    "Frontend/1.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
