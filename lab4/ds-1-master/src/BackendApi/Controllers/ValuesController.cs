@@ -6,13 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
 using StackExchange.Redis;
 using System.Threading;
+using consts;
 
 namespace Backend.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        private static ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+        private static ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(Consts.REDIS_HOST);
         static readonly ConcurrentDictionary<string, string> _data = new ConcurrentDictionary<string, string>();
 
         // GET api/values/<id>

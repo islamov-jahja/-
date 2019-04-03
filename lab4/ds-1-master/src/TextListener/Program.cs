@@ -1,11 +1,12 @@
 ﻿using System;
 using StackExchange.Redis;
+using consts;
 
 namespace TextListener
 {
     class Program
     {
-        private static ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+        private static ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(Consts.REDIS_HOST);
         static void Main(string[] args)
         {
             var subsc = redis.GetSubscriber();

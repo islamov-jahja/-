@@ -25,7 +25,8 @@
       "Frontend/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.2.0",
-          "Microsoft.NETCore.App": "2.2.0"
+          "Microsoft.NETCore.App": "2.2.0",
+          "consts": "1.0.0"
         },
         "runtime": {
           "Frontend.dll": {}
@@ -203,6 +204,14 @@
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.2.0"
+        }
+      },
+      "consts/1.0.0": {
+        "runtime": {
+          "consts.dll": {}
+        },
+        "compile": {
+          "consts.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -3827,6 +3836,11 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "consts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Libuv/1.10.0": {
       "type": "package",

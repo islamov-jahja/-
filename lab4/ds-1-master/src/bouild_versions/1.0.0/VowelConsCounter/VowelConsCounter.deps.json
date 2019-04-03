@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "TextRankCalc/1.0.0": {
+      "VowelConsCounter/1.0.0": {
         "dependencies": {
           "Microsoft.NETCore.App": "2.2.0",
           "consts": "1.0.0"
         },
         "runtime": {
-          "TextRankCalc.dll": {}
+          "VowelConsCounter.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.2.0": {
@@ -49,7 +49,7 @@
     }
   },
   "libraries": {
-    "TextRankCalc/1.0.0": {
+    "VowelConsCounter/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -8,6 +8,10 @@ if defined version (
 	dotnet publish
 	cd ..\TextRankCalc
 	dotnet publish
+	cd ..\VowelConsCounter
+	dotnet publish
+	cd ..\VowelConsRater
+	dotnet publish
 	cd ..
 
 	if not exist bouild_versions (
@@ -30,14 +34,25 @@ if defined version (
 		mkdir TextRankCalc
 		cd TextRankCalc
 		xcopy ..\..\..\TextRankCalc\bin\Debug\netcoreapp2.2\publish /S
-		
 		cd ..
-		echo port_frontend:5001 > config.txt
-		echo port_backend:5000 >> config.txt
+		mkdir VowelConsCounter
+		cd VowelConsCounter
+		xcopy ..\..\..\VowelConsCounter\bin\Debug\netcoreapp2.2\publish /S
+		cd ..
+		mkdir VowelConsRater
+		cd VowelConsRater
+		xcopy ..\..\..\VowelConsRater\bin\Debug\netcoreapp2.2\publish /S
+		cd ..
+        xcopy ..\..\run_vowel_and_rate.bat
+
+		echo VowelConsCounter:3 > config.txt
+		echo VowelConsRater:2 >> config.txt
+
 		echo start dotnet Frontend\Frontend.dll > run.bat
 		echo start dotnet BackendApi\BackendApi.dll >> run.bat
 		echo start dotnet TextRankCalc\TextRankCalc.dll >> run.bat
-		
+		echo call run_vowel_and_rate.bat >> run.bat
+
 		echo taskkill /IM dotnet.exe /F > stop.bat
 	) else (
 		echo This version already exists.

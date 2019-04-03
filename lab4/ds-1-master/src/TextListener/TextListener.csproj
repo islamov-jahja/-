@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.AspNetCore.All" />
   </ItemGroup>
 
+   <ItemGroup>
+    <ProjectReference Include="..\consts\consts.csproj" />
+  </ItemGroup>
+
 </Project>

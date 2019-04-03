@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Frontend.Models;
 using System.Net.Http;
+using consts;
 
 namespace Frontend.Controllers
 {
@@ -25,13 +26,14 @@ namespace Frontend.Controllers
         [HttpGet]
         public async Task<IActionResult> TextDetails(string id)
         {
-            string url = $"http://127.0.0.1:5000/api/values/{id}";
+            string url = Consts.BACKEND_URL + $"/{id}";
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(url);
 
             using(HttpContent responseContent = response.Content)
             {
                 ViewData["rate"] = await responseContent.ReadAsStringAsync();
+                ViewData["id"] = id;
                 return View(); 
             }
 
@@ -41,9 +43,8 @@ namespace Frontend.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadAsync(string data)
         {
-            string url = "http://127.0.0.1:5000/api/values";
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.PostAsJsonAsync(url, data);
+            HttpResponseMessage response = await client.PostAsJsonAsync(Consts.BACKEND_URL, data);
             using(HttpContent responseContent = response.Content)
             {
                 return Redirect("TextDetails/" + await responseContent.ReadAsStringAsync());
