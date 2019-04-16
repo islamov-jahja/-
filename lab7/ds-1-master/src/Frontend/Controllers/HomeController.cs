@@ -25,12 +25,6 @@ namespace Frontend.Controllers
         }
 
         [HttpGet]
-        /* public async Task<ActionResult> TextStatistics()
-        {
-
-        }*/
-
-        [HttpGet]
         public async Task<IActionResult> TextDetails(string id)
         {
             string url = Consts.BACKEND_URL + $"/{id}";

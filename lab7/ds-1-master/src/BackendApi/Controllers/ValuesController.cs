@@ -45,6 +45,26 @@ namespace Backend.Controllers
             return resultUserData;
         }
 
+          [HttpGet]
+        public string GetTextStatistic()
+        {
+            var db = DB.redis.GetDatabase();
+            string value = null;
+            
+            while(true)
+            {
+                if (db.KeyExists("text_statistic"))
+                {
+                    value = db.StringGet("text_statistic");
+                    break;
+                }
+
+                Thread.Sleep(500);
+            }
+
+            return value;
+        }
+
         public bool Exists(string id, Consts.Region region)
         {
             if (region == Consts.Region.rus)

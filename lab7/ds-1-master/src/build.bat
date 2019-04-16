@@ -14,6 +14,8 @@ if defined version (
 	dotnet publish
 	cd ..\TextListener
 	dotnet publish
+	cd ..\TextStatistic
+	dotnet publish
 	cd ..
 
 	if not exist bouild_versions (
@@ -49,6 +51,10 @@ if defined version (
 		cd TextListener
 		xcopy ..\..\..\TextListener\bin\Debug\netcoreapp2.2\publish /S
 		cd ..
+		mkdir TextStatistic
+		cd TextStatistic
+		xcopy ..\..\..\TextStatistic\bin\Debug\netcoreapp2.2\publish /S
+		cd ..
         xcopy ..\..\run_vowel_and_rate.bat
 
 		echo VowelConsCounter:3 > config.txt
@@ -65,6 +71,9 @@ if defined version (
 		echo cd .. >> run.bat
 		echo cd TextListener >> run.bat
 		echo start "TextListener" dotnet TextListener.dll >> run.bat
+		echo cd .. >> run.bat
+		echo cd TextStatistic >> run.bat
+		echo start "TextStatistic" dotnet TextStatistic.dll >> run.bat
 		echo cd .. >> run.bat
 
 		echo call run_vowel_and_rate.bat >> run.bat

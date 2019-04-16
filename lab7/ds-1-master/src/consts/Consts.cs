@@ -13,6 +13,7 @@ namespace consts
         public const String QUEUE_CHANNEL_COUNTER = "CalculateVowelConsJob";
         public const String QUEUE_NAME_RATER = "vowel-cons-rater-jobs"; 
         public const String QUEUE_CHANNEL_RATER = "RateVowelConsJob";
+        public const String TEXT_RANK_CALCULATED = "TextRankCalculated";
 
         public static Region GetRegionCode(String region)
         {

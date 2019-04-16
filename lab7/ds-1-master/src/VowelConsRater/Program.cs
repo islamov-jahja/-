@@ -2,6 +2,7 @@
 using StackExchange.Redis;
 using System.Text.RegularExpressions;
 using consts;
+using Newtonsoft.Json;
 
 namespace VowelConsRater
 {
@@ -31,6 +32,10 @@ namespace VowelConsRater
                     Console.WriteLine($"Region: {Consts.GetRegionToView(Consts.GetRegionCode(region))}");
                     Console.WriteLine($"Id: {id}");
                     SetValueToDb(id, relation, Consts.GetRegionCode(region));
+                    DataToStatistic data = new DataToStatistic();
+                    data.id = id;
+                    data.rate = relation;
+                    db.Publish(Consts.TEXT_RANK_CALCULATED, JsonConvert.SerializeObject(data));
                     message = null;
                     message = db.ListRightPop(Consts.QUEUE_NAME_RATER);
                 }
